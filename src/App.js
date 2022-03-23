@@ -4,7 +4,8 @@ import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import MainPage from './pages/mainPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Container, Nav} from 'react-bootstrap' 
+import {LinkContainer} from 'react-router-bootstrap'
+import { Navbar, Container, Nav, Image} from 'react-bootstrap' 
 import ApplicationForm from './pages/aplicant/applicationForm';
 
 
@@ -12,21 +13,27 @@ function App() {
   return (
     <div className="App">
 
+
       <BrowserRouter>
-
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar bg="primary" variant="dark">
+          <Container>
+            <Navbar.Brand href="https://epico.gob.ec/" target="blank"><Image src="assets/logo_epico.png"></Image></Navbar.Brand>
             <Nav className="me-auto">
-              <Link  to="/">Main Page</Link>
-              <Link  to="/register">Register</Link>
-              <Link  to="/login">Login</Link>
-              <Link to="/application">Solicitud de Beca</Link>
+              <LinkContainer to="/">
+                <Nav.Link>Main Page</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/register">
+                <Nav.Link>Registro</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/Login">
+                <Nav.Link>Login</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/application">
+                <Nav.Link>Solicitud de BECA</Nav.Link>
+              </LinkContainer>
             </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
+          </Container>
+        </Navbar>
         <Routes>
           <Route path="/" element={ <MainPage/>}/>
           <Route path="/login" element={<Login />} />
