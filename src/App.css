@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 body{
   background-image: url("../public/assets/background.png");
   background-position: center top;
@@ -10,14 +9,11 @@ body{
   background-attachment: fixed;
   background-size: cover;
 }
-
-
 .carrousel img{
   border-radius: 20px;
   border-width: 0px;
   border-style: solid;
   height: 100%;
-
 }
 
 .App-logo {
@@ -32,9 +28,9 @@ body{
 }
 
 .colForm{
-
   padding: 50px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #5ac5bc;
+  /* background: rgba(255, 255, 255, 0.2); */
   border-radius: 20px;
 }
 
@@ -75,15 +71,51 @@ body{
 
 .styleButton  {
   width: 100%;
-  background-color : #0d6efd
+  background-color : #2B2994
 }
-
-
-.navStyle {
+.navStyle{
   padding-top : '25px';
   padding-bottom: '26px';
   padding-left : '18px';
-  padding-right : '18px'
+  padding-right : '18px';
+  box-shadow: '0 8px 20px 0 rgb(0 0 0 / 10%)';
+  position: 'fixed';
+  color:white;
+}
+ 
+.header-button{
+  display: block;
+  background: rgba(255, 255, 255, 0.2);
+  box-sizing:border-box;
+  padding: 5px 12px;
+  border-radius: 8px; 
+  color:whitesmoke;
+  text-decoration: none;
 }
 
- 
+.page-footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #2B2994;
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.text-footer{
+  font-size: 16px;
+  line-height: 1.75;
+  color: #7e7e7e;
+}
+.item{
+  display: inline-block; 
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.im{
+  width:150px;
+  height:70px
+}
+a.nav-link{
+  color:white;
+}

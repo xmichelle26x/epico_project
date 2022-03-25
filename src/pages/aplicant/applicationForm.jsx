@@ -5,58 +5,58 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 const data = [
     {
         "id": 1,
-        "description": "Pregunta defecto 1",
+        "description": "¿Tiene conocimientos de programación?",
         "options": [
             {
                 "code": "Q001",
-                "description": "Opcion 1",
+                "description": "Sí",
                 "isCorrect": true
             },
             {
                 "code": "Q002",
-                "description": "Opcion 2",
+                "description": "No",
                 "isCorrect": false
-            }
+            },
         ]
     },
     {
         "id": 2,
-        "description": "Pregunta defecto 2",
+        "description": "¿Reside en la ciudad de Guayaquil?",
         "options": [
             {
                 "code": "Q004",
-                "description": "Opcion 1",
-                "isCorrect": false
-            },
-            {
-                "code": "Q005",
-                "description": "Opcion 2",
+                "description": "Sí",
                 "isCorrect": true
             },
             {
-                "code": "Q006",
-                "description": "Opcion 3",
+                "code": "Q005",
+                "description": "No",
                 "isCorrect": false
             },
-            {
-                "code": "Q007",
-                "description": "Opcion 4",
-                "isCorrect": false
-            }
+            // {
+            //     "code": "Q006",
+            //     "description": "C++",
+            //     "isCorrect": false
+            // },
+            // {
+            //     "code": "Q007",
+            //     "description": "PHP",
+            //     "isCorrect": false
+            // }
         ]
     },
     {
         "id": 3,
-        "description": "Pregunta defecto 4",
+        "description": "Género",
         "options": [
             {
                 "code": "Q008",
-                "description": "Opcion 1",
+                "description": "Masculino",
                 "isCorrect": false
             },
             {
                 "code": "Q009",
-                "description": "Opcion 2",
+                "description": "Femenino",
                 "isCorrect": true
             }
         ]
@@ -98,8 +98,8 @@ const data = [
 ]
 
 const styleContainer = {
-    marginTop:'50px',
-    marginBottom:'80px'
+    marginTop:'30px',
+    marginBottom:'60px'
 }
 function ApplicationForm() {
 
@@ -112,11 +112,13 @@ function ApplicationForm() {
     }, [])
     return (
         <Container style={styleContainer}>
-                <h2 className='title'>Formulario Primera Fase</h2>
-                <p style={{marginBottom:'40px'}}>Completa por favor el siguiente formulario para continuar a la siguiente fase</p>
             <Row className="login">
-                <Col md={3}>
-                        <Form className="colForm">
+                <Col md={7}>
+
+                <h2 className='title'>Formulario Primera Fase</h2>
+                <p style={{marginBottom:'20px', textAlign:'left', marginLeft:'50px'}}>Completa por favor el siguiente formulario para continuar a la siguiente fase</p>
+                    
+                        <Form className="colForm" style={{textAlign:'left'}}>
                         {questions.map(e => (
                             <Form.Group className="mb-3" controlId={e.id}>
                                 <Form.Label>{e.description}</Form.Label>
@@ -129,7 +131,9 @@ function ApplicationForm() {
                                 ))}
                             </Form.Group>
                         ))}
-                        <Button style={{width:'50%', marginTop:'50px'}}>Enviar</Button>
+                        <div class="col text-center">
+                        <   Button style={{width:'50%', marginTop:'50px'}}>Enviar</Button>
+                        </div>
                         </Form>
                 </Col>
             </Row>

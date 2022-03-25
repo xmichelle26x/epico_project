@@ -7,6 +7,7 @@ import MainPage from "../mainPage";
 import Login from '../auth/login';
 import Register from '../auth/register';
 import NavPage from "../elements/navbar";
+import FooterPage from "../elements/footer";
 
 function Routing(){
     return(
@@ -21,6 +22,8 @@ function Routing(){
           <Route path="/register" element={<Register />} />
           <Route path="/application" element={ <ApplicationForm/>} />
         </Routes>
+
+        <FooterPage></FooterPage>
 
       </BrowserRouter>
     )

@@ -1,15 +1,18 @@
 import React from "react";
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import {LinkContainer } from 'react-router-bootstrap'
+
 
 const styleButton = {
     width:'100%',
-    backgroundColor:'#0d6efd'
+    backgroundColor:'#0d6efd',
+    marginTop: '10px'
 }
 
 
 function Login(){
     return(
-        <Container >
+        <Container style={{marginBottom:'60px',marginTop:'30px'}}>
             
         <Row className="login">
             <Col md={4}>
@@ -17,7 +20,7 @@ function Login(){
                 <h2 className='title'>Iniciar sesión</h2>
                 <Form className="colForm">
                     <Form.Group className="mb-3">
-                        <Form.Control type="text" placeholder="Usuario" />
+                        <Form.Control type="text" placeholder="N. Identificación" />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
@@ -31,6 +34,11 @@ function Login(){
                     <Button variant="primary" size="lg" type="submit" style={styleButton}>
                         Ingresar
                     </Button>
+                    <LinkContainer style={styleButton} to="/register"> 
+                        <Button variant="primary" size="lg" type="submit" >
+                            Registrarse
+                        </Button>
+                    </LinkContainer>
                 </Form>
             </Col>
         </Row>

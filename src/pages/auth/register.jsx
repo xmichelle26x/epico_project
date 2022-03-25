@@ -5,8 +5,7 @@ import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 
 function Register(){
     return(
-        <Container >
-            <Row className="login">
+            <Container style={{marginBottom:'60px',marginTop:'30px'}}>            <Row className="login">
                 <Col  md={4} >
                 <h2 className='title'>Registro</h2>
                 <Form className="colForm">
