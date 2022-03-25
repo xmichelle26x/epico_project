@@ -11,7 +11,7 @@ function NavPage(){
                 
                 <Nav className="me-auto navStyle">
                     <LinkContainer to="/">
-                        <a  className="text-nav">Inicio</a>
+                        <a  className="text-nav">Nosotros</a>
                     </LinkContainer>
                     <LinkContainer to="/application">
                         <a  className="text-nav">Solicitud de BECA</a>
