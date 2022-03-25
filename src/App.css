@@ -115,7 +115,9 @@ body{
 .im{
   width:150px;
   height:70px
-}
-a.nav-link{
+} 
+.text-nav{
   color:white;
+  text-decoration: none;
+  margin:10px
 }
