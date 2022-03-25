@@ -116,7 +116,7 @@ function ApplicationForm() {
                 <p style={{marginBottom:'40px'}}>Completa por favor el siguiente formulario para continuar a la siguiente fase</p>
             <Row className="login">
                 <Col md={3}>
-                        <Form>
+                        <Form className="colForm">
                         {questions.map(e => (
                             <Form.Group className="mb-3" controlId={e.id}>
                                 <Form.Label>{e.description}</Form.Label>

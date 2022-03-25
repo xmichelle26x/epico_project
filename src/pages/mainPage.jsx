@@ -1,16 +1,31 @@
 import React from "react";
-import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Carousel} from 'react-bootstrap';
 
+
+const carouselImages = [
+    'assets/carousel/carousel1.jpg',
+    'assets/carousel/carousel2.jpg',
+    'assets/carousel/carousel3.jpg',
+    'assets/carousel/carousel4.jpg',
+]
 
 function MainPage(){
     return(
         <Container style={{marginTop:'80px'}} >
             
         <Row className="login">
-            <Col md={4}>
+            <Col md={8} >               
                 
-                <h2>Inicio</h2>
-                
+                <Carousel variant="dark" className='carrousel'>
+                    { carouselImages.map( (e) => (
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-100"
+                            src={e}
+                            />
+                        </Carousel.Item>
+                    ))}
+                </Carousel>   
             </Col>
         </Row>
     </Container>

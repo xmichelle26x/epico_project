@@ -9,13 +9,13 @@ const styleButton = {
 
 function Login(){
     return(
-        <Container style={{marginTop:'120px'}} >
+        <Container >
             
         <Row className="login">
             <Col md={4}>
                 
                 <h2 className='title'>Iniciar sesión</h2>
-                <Form>
+                <Form className="colForm">
                     <Form.Group className="mb-3">
                         <Form.Control type="text" placeholder="Usuario" />
                     </Form.Group>
