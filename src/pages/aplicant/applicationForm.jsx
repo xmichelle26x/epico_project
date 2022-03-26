@@ -109,7 +109,7 @@ function ApplicationForm() {
     const [questions, setQuestions] = useState([]);
 
     useEffect(() => {
-
+        window.scrollTo(0,0);
         // HERE YOU MUST USE AN AXIOS REQUEST TO GET THE API DATA
         setQuestions(data)
     }, [])

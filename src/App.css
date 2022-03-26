@@ -133,8 +133,9 @@ body{
 }
 
 
-.cardContainer .card{
-  margin: 50px auto;
+.cardContainer .card {
+  margin: 30px auto;
+  border-radius: 25px;
 }
 
 .imageCard{

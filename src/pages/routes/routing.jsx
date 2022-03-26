@@ -22,6 +22,7 @@ function Routing(){
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/becas" element={ <Becas/>} />
+          <Route path="/application" element={ <ApplicationForm/>} />
         </Routes>
 
         <FooterPage></FooterPage>

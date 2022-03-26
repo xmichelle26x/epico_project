@@ -1,5 +1,5 @@
 import { Row, Col, Card, Button } from 'react-bootstrap';
-
+import { useNavigate } from 'react-router-dom';
 
 const becas = [ {
     "title" : "Beca Front",
@@ -21,31 +21,36 @@ const becas = [ {
 
 
 function Becas(){
-    return(
-        <div className='cardContainer'>
-            <h1>Observas nuestras becas disponibles</h1>
-            { becas.map( ( e ) => ( 
-                <Row >
-                    <Col>              
-                    <Card border="primary" >
-                        <Card.Img variant="top" src={ e.image } />
-                        <Card.Body>
-                        <Card.Title><h2>{ e.title }</h2></Card.Title>
-                        <Card.Text>{ e.description }</Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <div className="d-grid gap-2">
-                                <Button variant="primary" size="lg">
-                                    Aplica aqui!
-                                </Button>
-                                <small className="text-muted">Puedes aplicar hasta el <b>{ e.endDate}</b></small>
-                            </div>
-                        </Card.Footer>
-                    </Card>
-                    </Col>
-                </Row>                    
-            )) }
 
+    const navigate = useNavigate();
+    return(
+        <div>
+            <h1 className="text-justify" style={{marginBottom:'50px',color:'#0194D3'}}>Observas nuestras becas disponibles</h1>
+            <div className='cardContainer'>
+                
+                { becas.map( ( e ) => ( 
+                    <Row >
+                        <Col>              
+                            <Card border="primary" style={{ borderRadius : "25px" }}>
+                                <Card.Img variant="top" style={{ paddingTop : "40px" }} src={ e.image } />
+                                <Card.Body>
+                                <Card.Title><h2>{ e.title }</h2></Card.Title>
+                                <Card.Text>{ e.description }</Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                    <div className="d-grid gap-2">
+                                        <Button variant="primary" onClick={ () => navigate("/application")} size="lg">
+                                            Aplica aqui!
+                                        </Button>
+                                        <small className="text-muted">Puedes aplicar hasta el <b>{ e.endDate}</b></small>
+                                    </div>
+                                </Card.Footer>
+                            </Card>
+                        </Col>
+                    </Row>                    
+                )) }
+
+            </div>
         </div>
         
     )
