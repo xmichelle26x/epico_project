@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import ModalRegistro from "../elements/modalRegistro";
 
 
 
@@ -9,6 +10,7 @@ const data = [
     {
         "id": 1,
         "description": "¿Tiene conocimientos de programación?",
+        "value" : 4,
         "options": [
             {
                 "code": "Q001",
@@ -36,16 +38,6 @@ const data = [
                 "description": "No",
                 "isCorrect": false
             },
-            // {
-            //     "code": "Q006",
-            //     "description": "C++",
-            //     "isCorrect": false
-            // },
-            // {
-            //     "code": "Q007",
-            //     "description": "PHP",
-            //     "isCorrect": false
-            // }
         ]
     },
     {
@@ -107,6 +99,8 @@ const styleContainer = {
 function ApplicationForm() {
 
     const [questions, setQuestions] = useState([]);
+    const [show, setShow] = useState(false);
+    // const handleShow = () => setShow(true);
 
     useEffect(() => {
         window.scrollTo(0,0);
@@ -135,12 +129,15 @@ function ApplicationForm() {
                             </Form.Group>
                         ))}
                         <div class="col text-center">
-                        <   Button style={{width:'50%', marginTop:'50px'}}>Enviar</Button>
+                        <   Button style={{width:'50%', marginTop:'50px'}} onClick={ ()=>{ setShow(true)}}>Enviar</Button>
                         </div>
                         </Form>
                 </Col>
             </Row>
-       
+            <ModalRegistro 
+                show={show}
+                onHide={() => setShow(false)}
+                setShow={setShow}/>                    
     </Container >
     )
 

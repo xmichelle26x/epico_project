@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,6 +24,10 @@ const becas = [ {
 function Becas(){
 
     const navigate = useNavigate();
+
+    useEffect( ()=>{
+        window.scrollTo(0,0);
+    }, [])
     return(
         <div>
             <h1 className="text-justify" style={{marginBottom:'50px',color:'#0194D3'}}>Observas nuestras becas disponibles</h1>

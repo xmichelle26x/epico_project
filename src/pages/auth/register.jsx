@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 
 
 
 function Register(){
+
+    useEffect( ()=>{
+        window.scrollTo(0,0);
+    }, [])
     return(
             <Container style={{marginBottom:'60px',marginTop:'30px'}}>            <Row className="login">
                 <Col  md={4} >
