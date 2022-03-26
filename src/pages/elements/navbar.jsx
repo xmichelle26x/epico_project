@@ -13,8 +13,8 @@ function NavPage(){
                     <LinkContainer to="/">
                         <a  className="text-nav">Nosotros</a>
                     </LinkContainer>
-                    <LinkContainer to="/application">
-                        <a  className="text-nav">Solicitud de BECA</a>
+                    <LinkContainer to="/becas">
+                        <a  className="text-nav">Becas disponibles</a>
                     </LinkContainer>
                 </Nav>
 

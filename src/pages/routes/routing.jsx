@@ -8,6 +8,7 @@ import Login from '../auth/login';
 import Register from '../auth/register';
 import NavPage from "../elements/navbar";
 import FooterPage from "../elements/footer";
+import Becas from "../aplicant/becas";
 
 function Routing(){
     return(
@@ -20,7 +21,7 @@ function Routing(){
           <Route path="/" element={ <MainPage/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/application" element={ <ApplicationForm/>} />
+          <Route path="/becas" element={ <Becas/>} />
         </Routes>
 
         <FooterPage></FooterPage>

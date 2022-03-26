@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body{
   background-image: url("../public/assets/background.png");
@@ -120,4 +125,20 @@ body{
   color:white;
   text-decoration: none;
   margin:10px
+}
+
+.cardContainer{
+  width: 50%;
+  margin: 20px auto;
+}
+
+
+.cardContainer .card{
+  margin: 50px auto;
+}
+
+.imageCard{
+  width: 500px;
+  height: 258px;
+  
 }
