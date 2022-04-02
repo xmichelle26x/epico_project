@@ -1,8 +1,6 @@
 import './App.css';
 import Routing from './pages/routes/routing';
 
-
-
 function App() {
   return (
 

@@ -1,13 +1,11 @@
 import React from "react";
 import {Container, Row, Col, Carousel} from 'react-bootstrap';
 
-
 const carouselImages = [
     'assets/carousel/carousel1.jpg',
     'assets/carousel/carousel2.jpg', 
     'assets/carousel/carousel4.jpg',
 ]
-
 
 const styleContainer = {
     marginTop:'40px',
@@ -19,15 +17,12 @@ function MainPage(){
     return(
         <Container style={styleContainer} >
         <Row className="login">
-            <h1 class="text-justify" style={{marginBottom:'20px',color:'#0194D3'}}>Sistema de Gestión de Becas EPICO</h1>
+            <h1 class="text-justify" style={{marginBottom:'20px',color:'#0194D3'}}>Sistema de Gestión de Becas Épico</h1>
             <Col md={10} style={{ display: 'block', width:'auto',height:'auto',margin:'0',padding:'0'}}>               
                 <Carousel variant="dark" className='carrousel' >
                     { carouselImages.map( (e) => (
                         <Carousel.Item interval={3000}>
-                            <img
-                            className="d-block w-100"
-                            src={e}
-                            />
+                            <img className="d-block w-100" src={e}/>
                         </Carousel.Item>
                     ))}
                 </Carousel>  
@@ -37,14 +32,10 @@ function MainPage(){
                     digital y brindar nuevas y mejores oportunidades a los guayaquileños. 
                 Queremos seguir contribuyendo a construir un Guayaquil digital.</h3> 
                 </div>
-
-            </Col>
-               
+            </Col>     
         </Row>
-
     </Container> 
     )
 }
-
 
 export default MainPage;

@@ -4,8 +4,6 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import ModalRegistro from "../elements/modalRegistro";
 
 
-
-
 const data = [
     {
         "id": 1,

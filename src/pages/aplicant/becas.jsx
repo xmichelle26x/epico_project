@@ -19,25 +19,21 @@ const becas = [ {
     "endDate" : "10/10/2022"
 }]
 
-
-
 function Becas(){
-
     const navigate = useNavigate();
-
     useEffect( ()=>{
         window.scrollTo(0,0);
     }, [])
     return(
         <div>
-            <h1 className="text-justify" style={{marginBottom:'50px',color:'#0194D3'}}>Observas nuestras becas disponibles</h1>
+            <h1 className="text-justify" style={{marginTop:'20px', marginBottom:'20px', color:'#0194D3'}}>Aplica a nuestras becas disponibles</h1>
             <div className='cardContainer'>
                 
                 { becas.map( ( e ) => ( 
                     <Row >
                         <Col>              
-                            <Card border="primary" style={{ borderRadius : "25px" }}>
-                                <Card.Img variant="top" style={{ paddingTop : "40px" }} src={ e.image } />
+                            <Card border="primary" style={{ borderRadius : "15px" }}>
+                                <Card.Img variant="top" style={{ paddingTop : "20px" }} src={ e.image } />
                                 <Card.Body>
                                 <Card.Title><h2>{ e.title }</h2></Card.Title>
                                 <Card.Text>{ e.description }</Card.Text>
@@ -45,7 +41,7 @@ function Becas(){
                                 <Card.Footer>
                                     <div className="d-grid gap-2">
                                         <Button variant="primary" onClick={ () => navigate("/application")} size="lg">
-                                            Aplica aqui!
+                                            ¡Aplica aquí!
                                         </Button>
                                         <small className="text-muted">Puedes aplicar hasta el <b>{ e.endDate}</b></small>
                                     </div>
@@ -54,10 +50,8 @@ function Becas(){
                         </Col>
                     </Row>                    
                 )) }
-
             </div>
-        </div>
-        
+        </div>       
     )
 }
 
