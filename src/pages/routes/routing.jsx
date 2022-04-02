@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import ApplicationForm from '../aplicant/applicationForm';
 import MainPage from "../mainPage";
 import Login from '../auth/login';
@@ -13,10 +11,7 @@ import Becas from "../aplicant/becas";
 function Routing(){
     return(
         <BrowserRouter>
-      
         <NavPage></NavPage>
-
-
         <Routes>
           <Route path="/" element={ <MainPage/>}/>
           <Route path="/login" element={<Login />} />
@@ -24,9 +19,7 @@ function Routing(){
           <Route path="/becas" element={ <Becas/>} />
           <Route path="/application" element={ <ApplicationForm/>} />
         </Routes>
-
         <FooterPage></FooterPage>
-
       </BrowserRouter>
     )
 }

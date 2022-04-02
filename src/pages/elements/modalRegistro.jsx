@@ -20,10 +20,10 @@ function ModalRegistro( props ){
         <div>
             <Modal show={props.show} onHide={ () => props.setShow( false )  }  >
                 <Modal.Header closeButton>
-                    <Modal.Title>En hora buena!</Modal.Title>
+                    <Modal.Title>¡En hora buena!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Hemos registrado tu aplicación!</p>            
+                    <p>¡Hemos registrado tu aplicación!</p>            
                     <p>Para seguir con el proceso debes registrarte</p>    
                 </Modal.Body>
                 <Modal.Footer>

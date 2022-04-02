@@ -26,17 +26,16 @@ function Becas(){
     }, [])
     return(
         <div>
-            <h1 className="text-justify" style={{marginTop:'20px', marginBottom:'20px', color:'#0194D3'}}>Aplica a nuestras becas disponibles</h1>
-            <div className='cardContainer'>
-                
+            <h1 className="text-justify primaryColor" style={{marginTop:'20px', marginBottom:'20px'}}>Aplica a nuestras becas disponibles</h1>
+            <div className='cardContainer'>   
                 { becas.map( ( e ) => ( 
                     <Row >
                         <Col>              
                             <Card border="primary" style={{ borderRadius : "15px" }}>
                                 <Card.Img variant="top" style={{ paddingTop : "20px" }} src={ e.image } />
                                 <Card.Body>
-                                <Card.Title><h2>{ e.title }</h2></Card.Title>
-                                <Card.Text>{ e.description }</Card.Text>
+                                    <Card.Title><h2>{ e.title }</h2></Card.Title>
+                                    <Card.Text>{ e.description }</Card.Text>
                                 </Card.Body>
                                 <Card.Footer>
                                     <div className="d-grid gap-2">

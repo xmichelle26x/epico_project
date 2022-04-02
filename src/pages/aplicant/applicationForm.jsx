@@ -110,7 +110,7 @@ function ApplicationForm() {
             <Row className="login">
                 <Col md={7}>
 
-                <h2 className='title'>Formulario Primera Fase</h2>
+                <h2 className='title primaryColor'>Formulario Primera Fase</h2>
                 <p style={{marginBottom:'20px', textAlign:'left', marginLeft:'50px'}}>Completa por favor el siguiente formulario para continuar a la siguiente fase</p>
                     
                         <Form className="colForm" style={{textAlign:'left'}}>
@@ -127,7 +127,7 @@ function ApplicationForm() {
                             </Form.Group>
                         ))}
                         <div class="col text-center">
-                        <   Button style={{width:'50%', marginTop:'50px'}} onClick={ ()=>{ setShow(true)}}>Enviar</Button>
+                        <Button style={{width:'50%', marginTop:'50px'}} onClick={ ()=>{ setShow(true)}}>Enviar</Button>
                         </div>
                         </Form>
                 </Col>

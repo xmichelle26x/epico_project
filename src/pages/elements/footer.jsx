@@ -5,7 +5,6 @@ import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 function FooterPage() {
     return (
-
         <footer color="blue" className="font-small pt-4 mt-4" style={{ backgroundColor: '#E5E6E7' }}>
             <Container fluid className="text-center text-md-left">
                 <Row>
@@ -14,16 +13,12 @@ function FooterPage() {
                             <div >
                                 <div class="image" style={{marginTop:'30px'}}>
                                     <img src="assets/logo_epico2.png" alt="ÉPICO LOGO" className="im"/>
-
                                     <div style={{display: 'flex',justifyContent:'space-between',width: '100px', margin:'auto',paddingTop:'10px',fontSize: '30px',color:'#2B2994'}}> 
                                         <FaFacebook />
                                         <FaInstagram />
                                         <FaTwitter />
                                     </div>
                                 </div>
-                                    
-
-
                             </div>
                         </div>
                     </Col>
@@ -47,6 +42,5 @@ function FooterPage() {
         </footer>
     )
 }
-
 
 export default FooterPage;
