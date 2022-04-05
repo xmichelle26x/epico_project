@@ -28,10 +28,10 @@ function Becas(){
         <div>
             <h1 className="text-justify primaryColor" style={{marginTop:'20px', marginBottom:'20px'}}>Aplica a nuestras becas disponibles</h1>
             <div className='cardContainer'>   
-                { becas.map( ( e ) => ( 
-                    <Row >
+                { becas.map( ( e,i ) => ( 
+                    <Row key={ i }>
                         <Col>              
-                            <Card border="primary" style={{ borderRadius : "15px" }}>
+                            <Card  border="primary" style={{ borderRadius : "15px" }}>
                                 <Card.Img variant="top" style={{ paddingTop : "20px" }} src={ e.image } />
                                 <Card.Body>
                                     <Card.Title><h2>{ e.title }</h2></Card.Title>

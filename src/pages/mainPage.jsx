@@ -17,12 +17,12 @@ function MainPage(){
     return(
         <Container style={styleContainer} >
         <Row className="login">
-            <h1 class="text-justify primaryColor" style={{marginBottom:'20px'}}>Sistema de Gestión de Becas Épico</h1>
+            <h1 className="text-justify primaryColor" style={{marginBottom:'20px'}}>Sistema de Gestión de Becas Épico</h1>
             <Col md={10} style={{ display: 'block', width:'auto',height:'auto',margin:'0',padding:'0'}}>               
                 <Carousel variant="dark" className='carrousel' >
-                    { carouselImages.map( (e) => (
-                        <Carousel.Item interval={3000}>
-                            <img className="d-block w-100" src={e}/>
+                    { carouselImages.map( (e,i) => (
+                        <Carousel.Item key={i} interval={3000}>
+                            <img  className="d-block w-100" src={e}/>
                         </Carousel.Item>
                     ))}
                 </Carousel>  

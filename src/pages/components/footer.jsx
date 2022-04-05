@@ -12,7 +12,7 @@ function FooterPage() {
                     <Col md="6">
                         <div  >
                             <div >
-                                <div class="image" style={{marginTop:'30px'}}>
+                                <div className="image" style={{marginTop:'30px'}}>
                                     <img src="assets/logo_epico2.png" alt="ÉPICO LOGO" className="im"/>
 
                                     <div style={{display: 'flex',justifyContent:'space-between',width: '100px', margin:'auto',paddingTop:'10px',fontSize: '30px',color:'#2B2994'}}> 
@@ -29,8 +29,8 @@ function FooterPage() {
                     </Col>
                     <Col md="6">
                         <h5 className="title">Contáctanos</h5>
-                        <div class="wpb_text_column wpb_content_element ">
-                            <div class="wpb_wrapper">
+                        <div className="wpb_text_column wpb_content_element ">
+                            <div className="wpb_wrapper">
                                 <p className="text-footer">Av. Carlos Julio Arosemena<br />
                                     Plaza Guayarte<br />
                                     Guayaquil – Ecuador<br />

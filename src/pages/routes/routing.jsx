@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ApplicationForm from '../aplicant/applicationForm';
+import ApplicationForm from '../landing/applicationForm';
 import MainPage from "../mainPage";
 import Login from '../auth/login';
 import Register from '../auth/register';
-import NavPage from "../elements/navbar";
-import FooterPage from "../elements/footer";
-import Becas from "../aplicant/becas";
+import NavPage from "../components/navbar";
+import FooterPage from "../components/footer";
+import Becas from "../landing/becas";
 
 function Routing(){
     return(

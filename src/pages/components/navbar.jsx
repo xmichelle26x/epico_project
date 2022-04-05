@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, Image} from 'react-bootstrap'
 
 function NavPage(){
     return(
-        <Navbar className="NavBar" expand='lg' >
+        <Navbar style={{backgroundColor:'#2B2994'}}  className="NavBar" expand='lg' >
             <Container >
             <Navbar.Brand href="https://epico.gob.ec/" target="blank"><Image style={{height: '40px'}} src="assets/logo_epico.png"></Image></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
