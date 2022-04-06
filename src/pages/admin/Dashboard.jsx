@@ -1,8 +1,10 @@
+import Sidebar from "./Sidebar";
+
 function Dashboard(){
     return (
-        <>
-            <h1>Admin</h1>
-        </>
+        <div>
+
+        </div>
     )
 }
 

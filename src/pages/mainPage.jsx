@@ -1,5 +1,6 @@
 import React from "react";
 import {Container, Row, Col, Carousel} from 'react-bootstrap';
+import Sidebar from "./admin/Sidebar";
 
 const carouselImages = [
     'assets/carousel/carousel1.jpg',

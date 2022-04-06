@@ -7,14 +7,21 @@ import Register from '../auth/register';
 import NavPage from "../components/navbar";
 import FooterPage from "../components/footer";
 import Becas from "../landing/becas";
+import { useEffect, useState } from "react";
+import Dashboard from "../admin/Dashboard";
 
 function Routing(){
+
+    const [ logged, setLogged ] = useState( false );
+
+    useEffect( ()=>{
+    }, [ logged ])
     return(
-        <BrowserRouter>
-        <NavPage></NavPage>
+      <BrowserRouter>
+        <NavPage logged={ logged } setLogged={ setLogged }></NavPage>
         <Routes>
           <Route path="/" element={ <MainPage/>}/>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setLogged={ setLogged }/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/becas" element={ <Becas/>} />
           <Route path="/application" element={ <ApplicationForm/>} />
