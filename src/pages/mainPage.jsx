@@ -14,6 +14,7 @@ const styleContainer = {
     width: 'auto',
 }
 
+
 function MainPage(){
     return(
         <Container style={styleContainer} >

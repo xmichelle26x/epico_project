@@ -188,3 +188,21 @@ body{
   display: flex;
   justify-content: center;
 }
+
+.sidebar{
+  background: rgba(62, 126, 245, 0.5) 
+}
+
+
+.card-group{
+  margin: 25px;
+}
+
+.modal-beca .modal-content{
+  background: rgba(56, 56, 56, 0.2);
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #0194D3;
+  box-shadow: 0 0 20px #4f9;
+}

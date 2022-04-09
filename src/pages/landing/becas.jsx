@@ -2,24 +2,8 @@ import { useEffect } from 'react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const becas = [ {
-    "title" : "Beca Front",
-    "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "image" : "assets/becas/front.jpg",
-    "endDate" : "10/10/2022"
-}, {
-    "title" : "Beca Back-End",
-    "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "image" : "assets/becas/back.jpg",
-    "endDate" : "10/10/2022"
-},{
-    "title" : "Data Science",
-    "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "image" : "assets/becas/data.jpg",
-    "endDate" : "10/10/2022"
-}]
 
-function Becas(){
+function Becas( { becas } ){
     const navigate = useNavigate();
     useEffect( ()=>{
         window.scrollTo(0,0);

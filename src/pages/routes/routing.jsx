@@ -8,9 +8,10 @@ import NavPage from "../components/navbar";
 import FooterPage from "../components/footer";
 import Becas from "../landing/becas";
 import { useEffect, useState } from "react";
-import Dashboard from "../admin/Dashboard";
+import BecasAdmin from "../admin/BecasAdmin";
 
-function Routing(){
+function Routing({becas, setBecas }){
+
 
     const [ logged, setLogged ] = useState( false );
 
@@ -23,8 +24,9 @@ function Routing(){
           <Route path="/" element={ <MainPage/>}/>
           <Route path="/login" element={<Login setLogged={ setLogged }/>} />
           <Route path="/register" element={<Register />} />
-          <Route path="/becas" element={ <Becas/>} />
+          <Route path="/aplica" element={ <Becas becas={ becas }/>} />
           <Route path="/application" element={ <ApplicationForm/>} />
+          <Route path="/becas" element={ <BecasAdmin becas={ becas } setBecas={ setBecas }/>}/>
         </Routes>
         <FooterPage></FooterPage>
       </BrowserRouter>

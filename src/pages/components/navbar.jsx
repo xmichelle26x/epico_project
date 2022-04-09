@@ -9,7 +9,6 @@ function NavPage( { logged , setLogged } ){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
     return(
         <Navbar style={{backgroundColor:'#2B2994'}}  className="NavBar" expand='lg' >
             <Container >
@@ -25,7 +24,7 @@ function NavPage( { logged , setLogged } ){
                             width="30"
                             height="30"
                             className="d-inline-block align-top profile-image" />
-                            <span className='user-name-navbar'>Kevin Vergara</span>
+                            <span className='user-name-navbar'>Luis Rejas</span>
                         </Button>
                     </Navbar.Brand>
                     : 
@@ -38,14 +37,14 @@ function NavPage( { logged , setLogged } ){
                     <LinkContainer to="/">
                         <a className="text-nav">Nosotros</a>
                     </LinkContainer>
-                    <LinkContainer to="/becas">
+                    <LinkContainer to="/aplica">
                         <a className="text-nav">Becas disponibles</a>
                     </LinkContainer>                   
                 </Nav>
                 <Nav>
                     { logged 
                         ? 
-                        <Button className="header-button" onClick={ () => setLogged( false ) }> Cerrar Sesión </Button>
+                        <Button className="header-button" onClick={ () => { window.location.reload()}}> Cerrar Sesión </Button>
                         :
                         <LinkContainer to="/login" className="justify-content-end"> 
                             <a className="header-button">Iniciar sesión</a>		            
