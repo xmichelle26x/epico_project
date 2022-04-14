@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 import {LinkContainer } from 'react-router-bootstrap'
 import { useNavigate } from "react-router-dom";
+import { SetUser } from "../../store/user/action";
 
 const styleButton = {
     width:'100%',
@@ -16,7 +17,8 @@ function Login({ setLogged }){
     const authenticate = ( e ) => {
         e.preventDefault();
         navigate("/")
-        setLogged( true ); 
+        SetUser();
+        // setLogged( true ); 
     }
     return(
         <Container style={{marginBottom:'60px',marginTop:'30px'}}>

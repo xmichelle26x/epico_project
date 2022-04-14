@@ -188,3 +188,9 @@ body{
   display: flex;
   justify-content: center;
 }
+
+.errors-form{
+  color: rgb(231, 0, 0);
+  margin-top: 5px;
+  font-size: 12px;
+}

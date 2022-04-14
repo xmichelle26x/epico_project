@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 
 
 
 function Register(){
+
     useEffect( ()=>{
         window.scrollTo(0,0);
     }, [])

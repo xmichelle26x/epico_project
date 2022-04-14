@@ -1,27 +1,21 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainPage from "../mainPage";
-import Login from '../auth/Login';
-import Register from '../auth/Register';
-import NavPage from "../layouts/navbar";
-import FooterPage from "../layouts/footer";
+import Login from '../auth/login';
+import Register from '../auth/register';
+import NavPage from "../components/navbar";
+import FooterPage from "../components/footer";
 import Becas from "../home/becas";
-import { useEffect, useState } from "react";
-import Dashboard from "../admin/Dashboard";
 import Applicant from "../home/Applicant";
 
-function Routing(){
+function RoutesDefault( { logged,setLogged }){
 
-    const [ logged, setLogged ] = useState( false );
-
-    useEffect( ()=>{
-    }, [ logged ])
     return(
       <BrowserRouter>
-        <NavPage logged={ logged } setLogged={ setLogged }></NavPage>
+        <NavPage ></NavPage>
         <Routes>
           <Route path="/" element={ <MainPage/>}/>
-          <Route path="/login" element={<Login setLogged={ setLogged }/>} />
+          <Route path="/login" element={<Login  logged={ logged } setLogged={ setLogged } />} />
           <Route path="/register" element={<Register />} />
           <Route path="/becas" element={ <Becas/>} />
           <Route path="/application" element={ <Applicant/>} />
@@ -31,4 +25,4 @@ function Routing(){
     )
 }
 
-export default Routing;
+export default RoutesDefault;
