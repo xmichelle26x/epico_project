@@ -152,6 +152,10 @@ body{
   background-color: #2B2994;
 }
 
+.profile-image{
+  border-radius: 50%;
+}
+
 .whiteColor{
   color: white;
 }
@@ -163,34 +167,57 @@ body{
 .transparent-bg{
   background-color: transparent; 
 }
+.sidebar-user{
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
 
-.profile-image{
-  border-radius: 25px;
-  border-color: aliceblue;
-  border-style: ridge;
+.sidebar-container{
+  text-align: center;
+}
+
+.col-image{
+  width: 200px!important;
+  height: 200px;
+  border-radius: 50%;
+  text-align: center!important; 
   border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  padding: 0!important;
+  margin-bottom: 25px;
 }
 
 .profile-image-sidebar{
-  width: 250px;
-  height: 250px;
+  margin: 0!important;
+  padding: 0!important;
   border-radius: 50%;
-  border-style: ridge;
-  border-width: 2px;
-  border-color: #282c34;
+  height: 100%;
+  width: 200px!important;
 }
 
 .user-name-navbar{
   padding: 55px 0px 0px 15px;
 }
 
-.profile-pic-container{
-  display: flex;
-  justify-content: center;
+.user-menu-list{
+  margin: 25px 0;
+  text-align: left;
 }
 
+.user-menu-icos{
+  margin: 0 10px;
+}
 .errors-form{
   color: rgb(231, 0, 0);
   margin-top: 5px;
   font-size: 12px;
+}
+
+.logout-row{
+  position: absolute;
+  width: 92%;
+  margin: 20px;
+  bottom: 0;
 }

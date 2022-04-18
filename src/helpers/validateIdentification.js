@@ -16,10 +16,10 @@ function validateIdentification( identification ){
      * 8.- restamos la decena inmediata - suma / si la suma nos resulta 10, el decimo digito es cero
      * 9.- Paso 9 Comparamos el digito resultante con el ultimo digito de la cedula si son iguales todo OK sino existe error.     
      */
-    if( identification.trim()  ){
+    if( !identification.trim()  ){
         return "La identificación es requerida*";
     }
-    if(identification.length == 10){
+    if(identification.length === 10){
         
         //Obtenemos el digito de la region que sonlos dos primeros digitos
         var digito_region = identification.substring(0,2);

@@ -3,11 +3,12 @@ const initialState = {
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default ( state = {}, action ) => {  
+export default ( state = initialState, action ) => {  
     if( action.type === 'SET_USER'){
         return{
             ...state,
-            user: state.user
+            user: action.user
         }
-    }
+    } 
+    return state;
 }

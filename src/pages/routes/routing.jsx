@@ -7,7 +7,6 @@ import NavPage from "../layouts/navbar";
 import FooterPage from "../layouts/footer";
 import Becas from "../home/becas";
 import { useEffect, useState } from "react";
-import Dashboard from "../admin/Dashboard";
 import Applicant from "../home/Applicant";
 
 function Routing(){

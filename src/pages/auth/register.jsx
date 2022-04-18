@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import { connect } from "react-redux";
+import { SetUser } from "../../store/user/action";
 
 
 
-function Register(){
+function Register( { SetUser } ){
 
     useEffect( ()=>{
         window.scrollTo(0,0);
@@ -41,4 +43,4 @@ function Register(){
     )
 }
 
-export default Register;
+export default connect ( null, { SetUser } )(Register);

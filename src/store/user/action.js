@@ -1,9 +1,12 @@
-const SetUser = () => {
+const SetUser = ( user ) => {
+
     return {
         type : "SET_USER",
-        user : {}
+        user : user,
     }
-}
+};
+
+
 
 
 export { SetUser };

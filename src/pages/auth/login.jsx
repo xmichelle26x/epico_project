@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import { connect } from "react-redux";
 import {LinkContainer } from 'react-router-bootstrap'
 import { useNavigate } from "react-router-dom";
 import { SetUser } from "../../store/user/action";
+import { SetLogged } from "../../store/logged/action";
 
 const styleButton = {
     width:'100%',
@@ -10,15 +12,30 @@ const styleButton = {
     marginTop: '10px'
 }
 
+const mapStateProps = ( state ) => {
+    return {
+        user : state.userReducer.user,
+        logged : state.loggedReducer.logged
+    }
+}
 
-function Login({ setLogged }){
+function Login({ SetUser, SetLogged, logged }){
 
     const navigate = useNavigate();
+
+    useState( () => {
+        if( logged ){
+            navigate("/");
+        }
+
+    }, [])
     const authenticate = ( e ) => {
         e.preventDefault();
-        navigate("/")
-        SetUser();
-        // setLogged( true ); 
+        SetUser({
+            "names" : "Kevin Vergara"
+        });
+        SetLogged( true );
+        navigate("/");
     }
     return(
         <Container style={{marginBottom:'60px',marginTop:'30px'}}>
@@ -56,4 +73,4 @@ function Login({ setLogged }){
 }
 
 
-export default Login;
+export default connect( mapStateProps, { SetUser, SetLogged })(Login);

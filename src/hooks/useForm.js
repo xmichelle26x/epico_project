@@ -9,21 +9,36 @@ export const useForm = ( initialForm, validateForm ) =>{
     const handleChange = ( e ) => {
         const { name, value } = e.target;
         setForm({
-            ...initialForm,
+            ...form,
             [ name ] : value
         })
     };
 
     const handleBlur = ( e ) => {
-        handleChange( e );
-        setErrors( validateForm( form ) )
+       
+    }
+    const handleErrors = ( form ) =>{
+        setErrors( validateForm( form ));
     }
 
     const handleSubmit = ( e ) => {
+        e.preventDefault();
+        setLoading( true );
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve( () =>{
+                    
+                    
+                })
+                setResponse( true );
+                setLoading( false )
+            }, 1500);
+            
+        });
 
     }
 
     return{
-        form, errors, loading, response, handleChange, handleBlur, handleSubmit
+        form, errors, loading, response, handleChange, handleBlur, handleSubmit, handleErrors
     }
 }
