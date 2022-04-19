@@ -8,6 +8,7 @@ import FooterPage from "../layouts/footer";
 import Becas from "../home/becas";
 import { useEffect, useState } from "react";
 import Applicant from "../home/Applicant";
+import Postulations from "../admin/Postulations";
 
 function Routing(){
 
@@ -24,6 +25,7 @@ function Routing(){
           <Route path="/register" element={<Register />} />
           <Route path="/becas" element={ <Becas/>} />
           <Route path="/application" element={ <Applicant/>} />
+          <Route path="/postulaciones" element={ <Postulations/>}/>
         </Routes>
         <FooterPage></FooterPage>
       </BrowserRouter>

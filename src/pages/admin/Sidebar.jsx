@@ -7,6 +7,7 @@ import { BsClockHistory } from 'react-icons/bs';
 import { SetUser } from "../../store/user/action";
 import { SetLogged } from "../../store/logged/action";
 import { useNavigate } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const mapStateProps = ( state ) => {
   return {
@@ -20,6 +21,7 @@ function Sidebar( { show, handleClose, user,SetUser, SetLogged}){
   const logOut = () => {
     SetLogged( false );
     SetUser( null );
+    navigate("/");
     window.location.reload();
   }
     return(
@@ -44,9 +46,26 @@ function Sidebar( { show, handleClose, user,SetUser, SetLogged}){
             <Row>
               <Col>
                 <ListGroup className='user-menu-list'>
-                  <ListGroup.Item action><FaUserCircle className='user-menu-icos'/>Administrar Perfil</ListGroup.Item>
-                  <ListGroup.Item action><MdLibraryBooks className='user-menu-icos'/> Mis Becas</ListGroup.Item>
-                  <ListGroup.Item action><BsClockHistory className='user-menu-icos'/> Becas en espera de confirmación</ListGroup.Item>
+                  <ListGroup.Item action className='user-menu-item'>
+                    <FaUserCircle className='user-menu-icos'/>
+                    <LinkContainer to="/" onClick={ () => handleClose() }> 
+                      <a>Administrar Perfil</a>		            
+                    </LinkContainer> 
+                  </ListGroup.Item>
+                  <ListGroup.Item action className='user-menu-item'>
+                    <MdLibraryBooks className='user-menu-icos'/> 
+                    <LinkContainer to="/postulaciones" onClick={ () => handleClose() }> 
+                      <a>Mis Becas</a>		            
+                    </LinkContainer> 
+                    
+                  </ListGroup.Item>
+                  <ListGroup.Item action className='user-menu-item'>
+                    <BsClockHistory className='user-menu-icos'/> 
+                    <LinkContainer to="/" onClick={ () => handleClose() }> 
+                      <a>Becas en espera de confirmación</a>		            
+                    </LinkContainer>
+                    
+                  </ListGroup.Item>
                 </ListGroup>
               </Col>
             </Row>

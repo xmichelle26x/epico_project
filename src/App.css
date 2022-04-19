@@ -62,7 +62,27 @@ body{
     transform: rotate(360deg);
   }
 }
+.container-postulations{
+  height: 70vh!important;
+  width: 70%!important;
+  padding: 60px;
+  text-align: center!important;
+}
 
+.postulations-group{
+  width: 80%;
+}
+
+.postulation-card{
+  padding: 10px;
+}
+.postulations-image{
+  height: 240px;
+}
+
+.postulation-body{
+  padding: 10px;
+}
 .login{
   margin-top: 20px;
   justify-content: center;
@@ -164,13 +184,17 @@ body{
   background-color: white;
 }
 
+.btn-close{
+  background-color: #ffffff!important;
+}
+
 .transparent-bg{
   background-color: transparent; 
 }
 .sidebar-user{
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7) !important;
+  background-color: rgba(0, 0, 0, 0.76) !important;
 }
 
 .sidebar-container{
@@ -206,8 +230,19 @@ body{
   text-align: left;
 }
 
-.user-menu-icos{
+.user-menu-item{
   margin: 0 10px;
+  padding: 15px!important;
+  color: #ffffff!important;
+  font-weight: bold!important;
+  background-color: rgba(0, 0, 0, 0.534)!important;
+  /* background-color: rgba(0, 0, 0, 0.438)!important; */
+}
+.user-menu-item:hover {
+  background-color: rgba(180, 179, 179, 0.534)!important;
+}
+.user-menu-icos{
+  margin: 0 10px 0 0px;
 }
 .errors-form{
   color: rgb(231, 0, 0);
