@@ -27,7 +27,7 @@ function Sidebar( { show, handleClose, user,SetUser, SetLogged}){
     return(
       <Offcanvas className='sidebar-user' show={show } placement="end" onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Panel Administrativo</Offcanvas.Title>
+          <Offcanvas.Title>Mi Perfil</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Container >
