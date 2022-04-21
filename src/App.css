@@ -213,12 +213,30 @@ body{
   margin-bottom: 25px;
 }
 
+.col-image-profile{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  text-align: center!important; 
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  margin: 5% 25%!important;
+  margin-bottom: 25px;
+}
+
 .profile-image-sidebar{
   margin: 0!important;
   padding: 0!important;
   border-radius: 50%;
   height: 100%;
   width: 200px!important;
+}
+
+.profile-image-admin{
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
 }
 
 .user-name-navbar{
@@ -256,3 +274,4 @@ body{
   margin: 20px;
   bottom: 0;
 }
+

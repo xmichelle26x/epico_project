@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Container, Row, Col, Carousel} from 'react-bootstrap';
 import Sidebar from "./admin/Sidebar";
 
@@ -15,6 +15,10 @@ const styleContainer = {
 }
 
 function MainPage(){
+
+    useEffect( ()=>{
+        window.scrollTo(0,0);
+    },[])
     return(
         <Container style={styleContainer} >
         <Row className="login">

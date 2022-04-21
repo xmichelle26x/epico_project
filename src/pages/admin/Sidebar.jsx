@@ -48,7 +48,7 @@ function Sidebar( { show, handleClose, user,SetUser, SetLogged}){
                 <ListGroup className='user-menu-list'>
                   <ListGroup.Item action className='user-menu-item'>
                     <FaUserCircle className='user-menu-icos'/>
-                    <LinkContainer to="/" onClick={ () => handleClose() }> 
+                    <LinkContainer to="/profile" onClick={ () => handleClose() }> 
                       <a>Administrar Perfil</a>		            
                     </LinkContainer> 
                   </ListGroup.Item>
@@ -61,7 +61,7 @@ function Sidebar( { show, handleClose, user,SetUser, SetLogged}){
                   </ListGroup.Item>
                   <ListGroup.Item action className='user-menu-item'>
                     <BsClockHistory className='user-menu-icos'/> 
-                    <LinkContainer to="/" onClick={ () => handleClose() }> 
+                    <LinkContainer to="/default" onClick={ () => handleClose() }> 
                       <a>Becas en espera de confirmación</a>		            
                     </LinkContainer>
                     

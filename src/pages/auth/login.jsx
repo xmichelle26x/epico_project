@@ -22,7 +22,7 @@ const mapStateProps = ( state ) => {
 function Login({ SetUser, SetLogged, logged }){
 
     const navigate = useNavigate();
-
+    const [isLoading, setLoading] = useState(false);
     useState( () => {
         if( logged ){
             navigate("/");
@@ -31,11 +31,16 @@ function Login({ SetUser, SetLogged, logged }){
     }, [])
     const authenticate = ( e ) => {
         e.preventDefault();
-        SetUser({
-            "names" : "Kevin Vergara"
-        });
-        SetLogged( true );
-        navigate("/");
+        setLoading( true );
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                SetUser({
+                    "names" : "Kevin Vergara"
+                });
+                SetLogged( true );
+                navigate("/");
+            }, 1500);          
+        });      
     }
     return(
         <Container style={{marginBottom:'60px',marginTop:'30px'}}>
@@ -57,11 +62,11 @@ function Login({ SetUser, SetLogged, logged }){
                         <Form.Check type="checkbox" label="Recordarme" style={{textAlign:'left'}}/>
                     </Form.Group>
 
-                    <Button variant="primary" size="lg" type="submit" style={styleButton}>
-                        Ingresar
+                    <Button variant="primary" disabled={ isLoading } size="lg" type="submit" className="styleButton">
+                        {isLoading ? 'Loading…' : 'Ingresar'}
                     </Button>
                     <LinkContainer style={styleButton} to="/register"> 
-                        <Button variant="primary" size="lg" type="button" >
+                        <Button disabled={ isLoading } variant="primary" size="lg" type="button" >
                             Registrarse
                         </Button>
                     </LinkContainer>

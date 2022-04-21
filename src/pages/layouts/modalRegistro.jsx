@@ -27,7 +27,7 @@ function ModalRegistro( props ){
                     <p>Para seguir con el proceso debes registrarte</p>    
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={ () => props.setShow( false )  } >
+                    <Button variant="secondary" onClick={ () => { props.setShow( false ); navigate("/")}  } >
                         Lo hare después
                     </Button>
                     <Button variant="primary" onClick={ () => {props.setShow( false ); navigate("/register") /*notify()*/ }} >

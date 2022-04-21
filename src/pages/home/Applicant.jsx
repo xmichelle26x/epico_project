@@ -51,6 +51,7 @@ const validationsForm = (form) =>{
 const Applicant = ( { SetUser } ) => {
 
     const [show, setShow] = useState(false);
+    const [isLoading, setLoading] = useState(false);
 
     // const { form, errors, loading, response, handleChange, handleSubmit } = useForm( initialForm, validationsForm )
 
@@ -58,21 +59,26 @@ const Applicant = ( { SetUser } ) => {
         form,
         errors, 
         response,
-        loading, 
+        // loading, 
         handleChange, 
         handleErrors,
         handleSubmit 
     } = useForm( initialForm, validationsForm );
     const send = ( e ) => {
-        handleSubmit( e ).then(
-            (  )=>{
-                if( response ){
-                    console.log( e )
-                    SetUser( form );
-                    setShow( true )
-                }
-            }
-        );
+        e.preventDefault();
+        setLoading( true );
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                SetUser({
+                    "names" : "Kevin Vergara"
+                });
+                SetUser( form );
+                setShow( true );
+                setLoading( true );
+
+            }, 1500);
+            
+        });
     }
     useEffect(() => {
         window.scrollTo(0,0);
@@ -149,8 +155,8 @@ const Applicant = ( { SetUser } ) => {
                             </div>
                         </Form.Group>
                         <div className="col text-center">
-                            <Button style={{width:'50%', marginTop:'50px'}} type="submit">
-                                { loading ? 
+                            <Button style={{width:'50%', marginTop:'50px'}} disabled={ isLoading } type="submit">
+                                { isLoading ? 
                                     <Spinner
                                     as="span"
                                     animation="grow"
