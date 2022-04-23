@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import {Form, Button, Container, Row, Col, Alert} from 'react-bootstrap';
 import { connect } from "react-redux";
 import {LinkContainer } from 'react-router-bootstrap'
 import { useNavigate } from "react-router-dom";
@@ -20,7 +20,12 @@ const mapStateProps = ( state ) => {
 }
 
 function Login({ SetUser, SetLogged, logged }){
-
+    const [ formUser, setFormUser ] = useState({
+        identification : "",
+        password : ""
+    });
+    const [ message, setMessage ] = useState( "" );
+    const [ showAlert, setShowAlert ] = useState( false );
     const navigate = useNavigate();
     const [isLoading, setLoading] = useState(false);
     useState( () => {
@@ -28,17 +33,40 @@ function Login({ SetUser, SetLogged, logged }){
             navigate("/");
         }
 
-    }, [])
+    }, []);
+    const changeForm = ( e ) =>{
+        
+        setFormUser({
+            ...formUser,
+            [ e.target.name ] : e.target.value
+        })
+        
+    }
     const authenticate = ( e ) => {
         e.preventDefault();
         setLoading( true );
         return new Promise((resolve) => {
             setTimeout(() => {
-                SetUser({
-                    "names" : "Kevin Vergara"
-                });
-                SetLogged( true );
-                navigate("/");
+                const user = localStorage.getItem( formUser.identification );
+                if( !user ){
+                    setMessage("Al parecer no existe ningún usuario con esa identificación")
+                    setShowAlert( true );
+                }else{
+                    var find = JSON.parse( user );
+                    if( formUser.password !== find.password ){
+                        setMessage("Contraseña incorrecta")
+                        setShowAlert( true );
+                    }else{
+                        
+                        SetUser({
+                            ...find
+                        });
+                        SetLogged( true );
+                        navigate("/");
+                    }
+                }
+                
+                setLoading( false );
             }, 1500);          
         });      
     }
@@ -47,15 +75,22 @@ function Login({ SetUser, SetLogged, logged }){
             
         <Row className="login">
             <Col md={4}>
-                
+                <Row>
+                    <Alert show={showAlert} variant="warning" onClose={() => setShowAlert(false)}>
+                        <Alert.Heading>Ups</Alert.Heading>
+                        <p dangerouslySetInnerHTML={{__html: message}}>
+                        </p>
+                        
+                    </Alert>
+                </Row>
                 <h2 className='title'>Iniciar sesión</h2>
                 <Form className="colForm" onSubmit={ (e) => authenticate(e) }>
                     <Form.Group className="mb-3">
-                        <Form.Control type="text" placeholder="N. Identificación" />
+                        <Form.Control type="text" required onChange={ changeForm } name="identification" placeholder="N. Identificación" />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <Form.Control type="password" placeholder="Contraseña" />
+                        <Form.Control type="password" required onChange={ changeForm } name="password" placeholder="Contraseña" />
                     </Form.Group>
 
                     <Form.Group className="mb-3">

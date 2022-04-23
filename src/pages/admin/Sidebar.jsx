@@ -35,13 +35,13 @@ function Sidebar( { show, handleClose, user,SetUser, SetLogged}){
                 <Col xs={12} sm={4} md={4} className="col-image" >
                   <Image
                   alt="User Profile"
-                  src="assets/user.jpg"
+                  src={ user.img ?? "assets/user.jpg" }
                   className="profile-image-sidebar"
                   />
                 </Col>
             </Row>
             <Row>
-              <h3> {user.names } </h3>
+              <h3> {user.name } </h3>
             </Row>
             <Row>
               <Col>
@@ -59,13 +59,13 @@ function Sidebar( { show, handleClose, user,SetUser, SetLogged}){
                     </LinkContainer> 
                     
                   </ListGroup.Item>
-                  <ListGroup.Item action className='user-menu-item'>
+                  {/* <ListGroup.Item action className='user-menu-item'>
                     <BsClockHistory className='user-menu-icos'/> 
                     <LinkContainer to="/default" onClick={ () => handleClose() }> 
                       <a>Becas en espera de confirmación</a>		            
                     </LinkContainer>
                     
-                  </ListGroup.Item>
+                  </ListGroup.Item> */}
                 </ListGroup>
               </Col>
             </Row>

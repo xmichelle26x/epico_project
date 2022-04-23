@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+import { SetUser } from "../../store/user/action";
+import { connect } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const becas = [ {
     "title" : "Beca Front",
     "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -18,12 +21,62 @@ const becas = [ {
     "image" : "assets/becas/data.jpg",
     "endDate" : "10/10/2022"
 }]
-
-function Becas(){
+const mapStateToProps = ( state ) => {
+    return {
+        user : state.userReducer.user,
+        logged : state.loggedReducer.logged
+    }
+} 
+const notify = () => toast.success("Te has postulado correctamente, muy pront te llegsara un correo con mas info!", {
+    position: "top-right",
+    autoClose: 1300,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    light : false 
+});
+function Becas( { user, SetUser, logged }){
     const navigate = useNavigate();
+    const [isLoading, setLoading] = useState(false);
+
     useEffect( ()=>{
+        setFormUser( user );
         window.scrollTo(0,0);
-    }, [])
+    }, []);
+    const [ formUser, setFormUser ] = useState({
+        name : "",
+        lastName : "",
+        identification : "",
+        email : "",
+        password : "",
+        repeatPassword : "",
+        img : "assets/user.jpg",
+        becas : []
+    });
+    const addBecaToUser = ( e) =>{
+        setLoading( true );
+
+        new Promise( ()=>{
+            setTimeout(() => {
+
+                if( logged){
+                    formUser.becas.push( e );
+                    SetUser(
+                        {
+                            ...formUser,
+                        }
+                    )
+                    notify();
+                }else{
+                    navigate( "/application");
+                }
+                setLoading( false );
+
+            }, 800 );
+        })
+    }
     return(
         <div>
             <h1 className="text-justify primaryColor" style={{marginTop:'20px', marginBottom:'20px'}}>Aplica a nuestras becas disponibles</h1>
@@ -39,8 +92,8 @@ function Becas(){
                                 </Card.Body>
                                 <Card.Footer>
                                     <div className="d-grid gap-2">
-                                        <Button variant="primary" onClick={ () => navigate("/application")} size="lg">
-                                            ¡Aplica aquí!
+                                        <Button variant="primary" disabled={isLoading} onClick={ () => addBecaToUser( e )} size="lg">
+                                            { isLoading ? "Espere..." : "¡Aplica aquí!"}
                                         </Button>
                                         <small className="text-muted">Puedes aplicar hasta el <b>{ e.endDate}</b></small>
                                     </div>
@@ -50,8 +103,19 @@ function Becas(){
                     </Row>                    
                 )) }
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                />
         </div>       
     )
 }
 
-export default Becas;
+export default connect( mapStateToProps , {  SetUser } )( Becas );

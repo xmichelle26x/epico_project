@@ -45,11 +45,11 @@ function NavPage( { user, logged } ){
                             <Button variant="outline-light" onClick={ () => handleShow()}>
                                 <Image
                                 alt="User Profile"
-                                src="assets/user.jpg"
+                                src={ user.img ?? "assets/user.jpg" }
                                 width="30"
                                 height="30"
                                 className="d-inline-block align-top profile-image" />
-                                <span className='user-name-navbar'> { user.names } </span>
+                                <span className='user-name-navbar'> { user.name } </span>
                             </Button>
                         </Navbar.Brand>
                         :
